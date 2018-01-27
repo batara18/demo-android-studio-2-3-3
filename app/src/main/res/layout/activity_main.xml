@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example8.mbatara.demo_1.MainActivity"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:id="@+id/add" />
+
+    <Button
+        android:layout_toRightOf="@+id/add"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="MENU"
+        android:id="@+id/btn_menus" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list1"
+        >
+
+    </ListView>
+
+</LinearLayout>
