@@ -31,7 +31,7 @@ import static android.R.attr.button;
 public class LoginActivity extends Activity {
 
     EditText txt_user,txt_password,txt_host;
-    Button btn_login;
+    Button btn_login,btn2,btn3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class LoginActivity extends Activity {
         txt_password = (EditText) findViewById(R.id.txt_password);
         txt_host = (EditText) findViewById(R.id.txt_host);
         btn_login = (Button) findViewById(R.id.btn_login);
+        btn2 = (Button)findViewById(R.id.btn_menus);
+        btn3 = (Button)findViewById(R.id.btn_menus_grid);
 
         btn_login.setOnClickListener(new View.OnClickListener()
         {
@@ -50,6 +52,24 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 // call method mainList()
                 login();
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent frm_menus = new Intent(LoginActivity.this,MainMenuActivity.class);
+                startActivity(frm_menus);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent frm_menus_grid = new Intent(LoginActivity.this,GridLayoutActivity.class);
+                startActivity(frm_menus_grid);
             }
         });
 
@@ -69,7 +89,7 @@ public class LoginActivity extends Activity {
         alert.show();
         */
         // alert 3
-        showAlert();
+        //showAlert();
     }
 
     private void showAlert(){

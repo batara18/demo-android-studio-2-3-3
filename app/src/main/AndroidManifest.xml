@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".UpdateData" />
-        <activity android:name=".MainMenuActivity"></activity>
+        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".GridLayoutActivity" />
+        <activity android:name=".ViewActivity"></activity>
     </application>
 
 </manifest>
