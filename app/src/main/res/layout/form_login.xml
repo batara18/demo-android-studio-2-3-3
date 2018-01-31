@@ -77,20 +77,6 @@
                             android:textColorHint="#ffffffff"
                             android:textColor="#ffffffff" />
 
-                        <EditText
-                            android:id="@+id/txt_host"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Host"
-                            android:imeActionLabel="@string/action_sign_in"
-                            android:imeOptions="actionUnspecified"
-                            android:inputType="text"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:layout_marginBottom="10dp"
-                            android:textColorHint="#ffffffff"
-                            android:textColor="#ffffffff" />
-
                         <Button
                             android:id="@+id/btn_login"
                             style="?android:textAppearanceSmall"

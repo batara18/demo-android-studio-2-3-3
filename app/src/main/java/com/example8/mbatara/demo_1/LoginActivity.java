@@ -30,8 +30,9 @@ import static android.R.attr.button;
 
 public class LoginActivity extends Activity {
 
-    EditText txt_user,txt_password,txt_host;
+    EditText txt_user,txt_password;
     Button btn_login,btn2,btn3;
+    String txt_host = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class LoginActivity extends Activity {
 
         txt_user = (EditText) findViewById(R.id.txt_user);
         txt_password = (EditText) findViewById(R.id.txt_password);
-        txt_host = (EditText) findViewById(R.id.txt_host);
+
         btn_login = (Button) findViewById(R.id.btn_login);
         btn2 = (Button)findViewById(R.id.btn_menus);
         btn3 = (Button)findViewById(R.id.btn_menus_grid);
@@ -118,8 +119,7 @@ public class LoginActivity extends Activity {
 
     private void login()
     {
-        //final EditText txt_host = (EditText) findViewById(R.id.txt_host);
-        String url = "https://"+txt_host.getText().toString()+"/demo-login";
+        String url = "https://"+txt_host+"/demo-login";
 
         final StringRequest stringRequest = new StringRequest(+
                 Request.Method.POST, url,
@@ -136,17 +136,20 @@ public class LoginActivity extends Activity {
                             String stat = json.getString("stat");
 
                             if (stat=="1") {
-                                //final EditText txt_user = (EditText) findViewById(R.id.txt_user);
+                                String user_id = json.getString("user_id");
+                                String user_name = json.getString("user_name");
 
                                 SharedPreferences sp = getSharedPreferences("my_pref", Activity.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sp.edit();
                                 editor.putString("pref_user", txt_user.getText().toString());
                                 editor.putString("pref_password", txt_password.getText().toString());
 
-                                editor.putString("pref_host", txt_host.getText().toString());
+                                editor.putString("pref_host",txt_host);
+                                editor.putString("pref_user_id",user_id);
+                                editor.putString("pref_user_name",user_name);
 
                                 editor.commit();
-                                Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Success :"+user_id, Toast.LENGTH_SHORT).show();
                                 Intent main_activity = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(main_activity);
                             } else {

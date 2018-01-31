@@ -12,19 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".InsertData" />
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InsertData"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpdateData" />
-        <activity android:name=".MainMenuActivity" />
-        <activity android:name=".GridLayoutActivity" />
-        <activity android:name=".ViewActivity"></activity>
+        <activity
+            android:name=".UpdateData"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GridLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Graph1Activity"></activity>
     </application>
 
 </manifest>
